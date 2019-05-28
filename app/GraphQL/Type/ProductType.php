@@ -2,7 +2,6 @@
 
 namespace App\GraphQL\Type;
 
-use App\GraphQL\Field\DateTimeField;
 use App\Models\Product;
 use GraphQL\Type\Definition\Type;
 use Rebing\GraphQL\Support\Type as GraphQLType;
@@ -21,7 +20,7 @@ class ProductType extends GraphQLType
             'id' => [
                 'type' => Type::nonNull(Type::string()),
                 'description' => 'ID',
-                'alias' => 'product_id',
+                'alias' => 'id',
             ],
             'title' => [
                 'type' => Type::string(),

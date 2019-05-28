@@ -95,20 +95,17 @@ return [
         'default' => [
             'query' => [
                 'loadCategories' => \App\GraphQL\Query\CategoriesQuery::class,
+                'loadProducts' => \App\GraphQL\Query\ProductsQuery::class
             ],
             'mutation' => [
-                // 'example_mutation'  => ExampleMutation::class,
+                'storeProduct'  => \App\GraphQL\Mutation\StoreProductMutation::class,
             ],
             'middleware' => [],
             'method'     => ['get', 'post'],
         ],
         'auth' => [
-            'query' => [
-                // 'example_query' => ExampleQuery::class,
-            ],
-            'mutation' => [
-                // 'example_mutation'  => ExampleMutation::class,
-            ],
+            'query' => [],
+            'mutation' => [],
             'middleware' => ['jwt'],
             'method'     => ['get', 'post'],
         ],
@@ -126,7 +123,10 @@ return [
     'types' => [
         'user' => \App\GraphQL\Type\UserType::class,
         'category' => \App\GraphQL\Type\CategoryType::class,
-        'product' => \App\GraphQL\Type\ProductType::class
+        'product' => \App\GraphQL\Type\ProductType::class,
+        // Input types
+        'productInput' => \App\GraphQL\InputObject\ProductInput::class
+
     ],
 
     // This callable will be passed the Error object for each errors GraphQL catch.

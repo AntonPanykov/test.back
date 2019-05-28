@@ -3,7 +3,6 @@
 namespace App\GraphQL\Query;
 
 use App\Models\Category;
-use App\Models\User;
 use Rebing\GraphQL\Support\Facades\GraphQL;
 use GraphQL\Type\Definition\Type;
 use Rebing\GraphQL\Support\Query;
@@ -45,7 +44,7 @@ class CategoriesQuery extends Query
 
         // Получить потомков
         if (isset($args['parentPath'])) {
-            return Category::whereRaw("path <@ '" . $this->item->tree . "'")->get();
+            return Category::whereRaw("path <@ '" . $args['parentPath'] . "'")->get();
         }
 
         if (isset($args['title'])) {

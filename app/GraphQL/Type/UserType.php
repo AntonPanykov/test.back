@@ -2,7 +2,6 @@
 
 namespace App\GraphQL\Type;
 
-use App\GraphQL\Field\DateTimeField;
 use App\Models\User;
 use GraphQL\Type\Definition\Type;
 use Rebing\GraphQL\Support\Type as GraphQLType;
